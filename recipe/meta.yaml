@@ -1,4 +1,4 @@
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 {% set name = "rhapsody" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/r/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 225fcaabcde9cdba5e08f7484f24d6c8a76789808a33b7eacb1e96146a4f2887
+  sha256: 159cad70b5c34e9b36f24f8975933de06e541240151bd977be8c79ee609045b8
 
 
 build:
