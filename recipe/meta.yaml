@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/r/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/r/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 159cad70b5c34e9b36f24f8975933de06e541240151bd977be8c79ee609045b8
 
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
@@ -20,12 +20,12 @@ build:
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
 
   run:
 
-    - python >=3
+    - python >={{ python_min }}
     - ipython
     - pandas
     - click
@@ -37,6 +37,8 @@ requirements:
     - biom-format
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - rhapsody
 
